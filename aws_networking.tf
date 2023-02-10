@@ -32,3 +32,7 @@ resource "hcp_aws_transit_gateway_attachment" "example" {
 resource "aws_ec2_transit_gateway_vpc_attachment_accepter" "example" {
   transit_gateway_attachment_id = hcp_aws_transit_gateway_attachment.example.provider_transit_gateway_attachment_id
 }
+
+resource "aws_vpc" "example" {
+  cidr_block = "10.0.0.0/16"
+}
