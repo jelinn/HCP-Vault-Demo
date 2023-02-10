@@ -57,3 +57,18 @@ variable "tier" {
   type        = string
   default     = "plus_small"
 }
+
+variable "grafana_endpoint"{
+
+
+}
+
+variable "grafana_username"{
+
+
+}
+
+variable "grafana_password"{
+
+    
+}
