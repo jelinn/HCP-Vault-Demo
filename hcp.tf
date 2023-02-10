@@ -12,12 +12,12 @@ resource "hcp_vault_cluster" "primary_cluster" {
   public_endpoint = true
   metrics_config{
     grafana_endpoint = var.grafana_endpoint
-    grafana_user = var.grafana_user
+    grafana_user = var.grafana_username
     grafana_password = var.grafana_password
   }
   audit_log_config {
     grafana_endpoint = var.grafana_endpoint
-    grafana_user = var.grafana_user
+    grafana_user = var.grafana_username
     grafana_password = var.grafana_password
   }
 }

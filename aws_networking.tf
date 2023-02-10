@@ -9,7 +9,7 @@ resource "aws_ram_resource_share" "example" {
 
 resource "aws_ram_principal_association" "example" {
   resource_share_arn = aws_ram_resource_share.example.arn
-  principal          = hcp_hvn.example_hvn.provider_account_id
+  principal          = hcp_hvn.primary_hvn.provider_account_id
 }
 
 resource "aws_ram_resource_association" "example" {
