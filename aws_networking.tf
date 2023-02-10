@@ -24,7 +24,7 @@ resource "hcp_aws_transit_gateway_attachment" "example" {
   ]
 
   hvn_id                        = hcp_hvn.primary_cluster_hvn.hvn_id
-  transit_gateway_attachment_id = "${var.Name}-tgw-attachment"
+  transit_gateway_attachment_id = "hcp-tgw-attachment"
   transit_gateway_id            = aws_ec2_transit_gateway.example.id
   resource_share_arn            = aws_ram_resource_share.example.arn
 }
