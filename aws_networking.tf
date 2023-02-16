@@ -39,7 +39,7 @@ resource "aws_vpc" "example" {
 
 resource "aws_customer_gateway" "main" {
   bgp_asn    = 65000
-  ip_address = google_compute_ha_vpn_gateway.network1.ip_address
+  ip_address = google_compute_network.network1.ip_address
   type       = "ipsec.1"
 
   tags = {
