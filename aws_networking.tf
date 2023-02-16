@@ -36,3 +36,13 @@ resource "aws_ec2_transit_gateway_vpc_attachment_accepter" "example" {
 resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
 }
+
+resource "aws_customer_gateway" "main" {
+  bgp_asn    = 65000
+  ip_address = google_compute_ha_vpn_gateway.network1.ip_address
+  type       = "ipsec.1"
+
+  tags = {
+    Name = "main-customer-gateway"
+  }
+}
