@@ -37,12 +37,12 @@ resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
 }
 
-resource "aws_customer_gateway" "main" {
-  bgp_asn    = 65000
-  ip_address = google_compute_network.network1.ip_address
-  type       = "ipsec.1"
+# resource "aws_customer_gateway" "main" {
+#   bgp_asn    = 65000
+#   ip_address = ""
+#   type       = "ipsec.1"
 
-  tags = {
-    Name = "main-customer-gateway"
-  }
+#   tags = {
+#     Name = "main-customer-gateway"
+#   }
 }
