@@ -1,7 +1,7 @@
 variable "primary_cluster_hvn" {
   description = "The ID of the HCP HVN."
   type        = string
-  default     = "hvn-us-east-1"
+  default     = "hvn-us-east-2"
 }
 
 variable "aws_region"{}
@@ -48,7 +48,7 @@ variable "secondary_cluster_id" {
 variable "primary_region" {
   description = "The region of the primary cluster HCP HVN and Vault cluster."
   type        = string
-  default     = "us-east-1"
+  default     = "us-east-2"
 }
 
 variable "secondary_region" {
