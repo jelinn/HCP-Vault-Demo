@@ -6,6 +6,15 @@ variable "primary_cluster_hvn" {
 
 variable "aws_region"{}
 
+variable "vpc_cidr" {
+  default ="10.0.1.0/24"
+}
+
+variable "az" {
+  default ="us-east-2a"
+}
+
+
 variable "primary_cluster_hvn_cidr" {
   description = "The ID of the HCP HVN."
   type        = string
