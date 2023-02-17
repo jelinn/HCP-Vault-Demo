@@ -33,9 +33,26 @@ resource "aws_ec2_transit_gateway_vpc_attachment_accepter" "example" {
   transit_gateway_attachment_id = hcp_aws_transit_gateway_attachment.example.provider_transit_gateway_attachment_id
 }
 
-# resource "aws_vpc" "example" {
-#   cidr_block = "10.0.0.0/16"
-# }
+resource "aws_vpc" "example" {
+  cidr_block = "10.0.0.0/16"
+}
+
+resource "aws_subnet" "my_subnet" {
+  vpc_id            = aws_vpc.example.id
+  cidr_block = var.vpc_cidr
+  availability_zone = var.az
+}
+
+resource "aws_ec2_transit_gateway_vpc_attachment" "example" {
+  subnet_ids         = [aws_subnet.my_subnet.id]
+  transit_gateway_id = aws_ec2_transit_gateway.example.id
+  vpc_id             = aws_vpc.example.id
+  depends_on = [ 
+    aws_ec2_transit_gateway.example, 
+  ]
+}
+
+
 
 # resource "aws_customer_gateway" "main" {
 #   bgp_asn    = 65000

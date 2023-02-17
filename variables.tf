@@ -4,6 +4,8 @@ variable "primary_cluster_hvn" {
   default     = "hvn-us-east-1"
 }
 
+variable "aws_region"{}
+
 variable "primary_cluster_hvn_cidr" {
   description = "The ID of the HCP HVN."
   type        = string
