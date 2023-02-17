@@ -10,16 +10,16 @@ resource "hcp_vault_cluster" "primary_cluster" {
   cluster_id = var.primary_cluster_id
   tier       = var.tier
   public_endpoint = true
-  metrics_config{
-    grafana_endpoint = var.grafana_endpoint
-    grafana_user = var.grafana_username
-    grafana_password = var.grafana_password
-  }
-  audit_log_config {
-    grafana_endpoint = var.grafana_endpoint
-    grafana_user = var.grafana_username
-    grafana_password = var.grafana_password
-  }
+  # metrics_config{
+  #   grafana_endpoint = var.grafana_endpoint
+  #   grafana_user = var.grafana_username
+  #   grafana_password = var.grafana_password
+  # }
+  # audit_log_config {
+  #   grafana_endpoint = var.grafana_endpoint
+  #   grafana_user = var.grafana_username
+  #   grafana_password = var.grafana_password
+  # }
 }
 
 resource "hcp_hvn" "secondary_cluster_hvn" {
