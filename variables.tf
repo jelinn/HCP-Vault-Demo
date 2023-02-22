@@ -7,7 +7,7 @@ variable "primary_cluster_hvn" {
 variable "aws_region"{}
 
 variable "vpc_cidr" {
-  default ="10.0.1.0/24"
+  default ="10.0.2.0/24"
 }
 
 variable "az" {
