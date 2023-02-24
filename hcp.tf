@@ -38,9 +38,9 @@ resource "hcp_vault_cluster" "secondary_cluster" {
   public_endpoint = true
 }
 
-resource "hcp_hvn_route" "route" {
-  hvn_link         = hcp_hvn.primary_cluster_hvn.self_link
-  hvn_route_id     = "hvn-to-tgw-attachment"
-  destination_cidr = aws_vpc.example.cidr_block
-  target_link      = hcp_aws_transit_gateway_attachment.example.self_link
-}
+# resource "hcp_hvn_route" "route" {
+#   hvn_link         = hcp_hvn.primary_cluster_hvn.self_link
+#   hvn_route_id     = "hvn-to-tgw-attachment"
+#   destination_cidr = aws_vpc.example.cidr_block
+#   target_link      = hcp_aws_transit_gateway_attachment.example.self_link
+# }
